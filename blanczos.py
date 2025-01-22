@@ -52,16 +52,8 @@ def tridiagonalize_sqrtm(A,q,m=None):
         :A: A sparse Hermitian matrix.
         :q: The starting columnwise orthogonal vector q with shape (n*p,p) with p the block size and n the number of blocks.
         :m: the steps to run.
-        :getbasis: Return basis vectors if True.
 
     Return:
-        Tridiagonal part elements (data,offset),
-        | data -> (lower part, middle part, upper part)
-        | offset -> (-1, 0, 1) to indicate the value of (j-i) of specific data with i,j the matrix element indices.
-
-        To construct the matrix, set the block-matrix elements with block indices j-i == offset[k] to data[k].
-        This is exactly what `construct_tridmat` function do.
-
         **Note:** The orthogonality of initial vector q will be re-inforced to guarant the convergent result,
         meanwhile, the orthogonality of starting vector is also checked.
     """
